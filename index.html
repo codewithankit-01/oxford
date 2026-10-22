@@ -1,1 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnkitX</title>
+<meta name="description" content="AnkitX is the portfolio of Ankit Sharma, a web developer working with HTML, CSS, JavaScript, Python, Django, Flask and SQL.">
+<meta name="theme-color" content="#08090b">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="page-loader" id="pageLoader" role="status" aria-live="polite" aria-label="Loading AnkitX portfolio">
+  <div class="loader-door loader-door-left" aria-hidden="true"><img src="assets/ankitx-logo-transparent.png" alt=""></div>
+  <div class="loader-door loader-door-right" aria-hidden="true"><img src="assets/ankitx-logo-transparent.png" alt=""></div>
+  <div class="loader-content">
+    <div class="loader-progress" role="progressbar" aria-label="Page loading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="loader-progress-fill" id="loaderProgressFill"></span>
+    </div>
+    <div class="loader-meta">
+      <span class="loader-status mono">Preparing your experience</span>
+      <span class="loader-percent mono" id="loaderPercent">0%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ICON SPRITE (all icons are local, no internet needed) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gFlask" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#00e0ff"/></linearGradient>
+    <linearGradient id="gAnti" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4285f4"/><stop offset=".5" stop-color="#a855f7"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient>
+    <linearGradient id="gInsta" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".65" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient>
+  </defs>
+
+  <symbol id="i-html" viewBox="0 0 48 48"><image href="assets/icons/html-5.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-css" viewBox="0 0 48 48"><image href="assets/icons/css-3.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-js" viewBox="0 0 48 48"><image href="assets/icons/js.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-python" viewBox="0 0 48 48"><image href="assets/icons/python.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-django" viewBox="0 0 48 48"><image href="assets/icons/django-transparent.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 48 48"><image href="assets/icons/flask-transparent.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-sql" viewBox="0 0 48 48"><image href="assets/icons/database.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-claude" viewBox="0 0 48 48"><image href="assets/icons/claude.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-cursor" viewBox="0 0 48 48"><image href="assets/icons/cursor-ai-transparent.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-antigravity" viewBox="0 0 48 48"><image href="assets/icons/antigravity-transparent.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+  <symbol id="i-linux" viewBox="0 0 48 48"><image href="assets/icons/linux.png" width="48" height="48" preserveAspectRatio="xMidYMid meet"/></symbol>
+
+  <symbol id="s-whatsapp" viewBox="0 0 48 48"><path d="M24 4C12.900 4 4 12.900 4 24c0 3.600 1 7 2.700 9.900L4 44l10.400-2.700C17.200 43 20.500 44 24 44c11.100 0 20-8.900 20-20S35.100 4 24 4z" fill="#25d366"/><path d="M17.500 14c-1.200 1.200-1.800 3.200 0 6.600 2 3.600 5.500 7.200 9.300 8.700 2.400.9 4-.1 4.600-1.700l-3.300-2.200-1.600 1.200c-2.200-.9-4.300-3-5.200-5.100l1.200-1.600-2.200-3.400c-.8-.8-1.900-1.100-2.800-.5z" fill="#fff"/></symbol>
+  <symbol id="s-gmail" viewBox="0 0 48 48"><rect x="4" y="9" width="40" height="30" rx="4" fill="#fff" stroke="#ea4335" stroke-width="2.600"/><path d="M6 12l18 14 18-14" fill="none" stroke="#ea4335" stroke-width="3.600" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="s-github" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#12102a"/><path transform="translate(12 12)" fill="#fff" d="M12 .5C5.65.5.5 5.78.5 12.29c0 5.2 3.3 9.61 7.87 11.17.58.11.79-.26.79-.57v-2.02c-3.2.72-3.87-1.41-3.87-1.41-.53-1.37-1.28-1.74-1.28-1.74-1.05-.74.08-.73.08-.73 1.16.08 1.77 1.23 1.77 1.23 1.03 1.81 2.7 1.29 3.36.98.1-.77.4-1.29.73-1.59-2.56-.3-5.26-1.32-5.26-5.87 0-1.3.45-2.36 1.19-3.19-.12-.3-.52-1.52.11-3.16 0 0 .97-.32 3.17 1.22a10.7 10.7 0 015.77 0c2.2-1.54 3.17-1.22 3.17-1.22.63 1.64.23 2.86.11 3.16.74.83 1.19 1.89 1.19 3.19 0 4.56-2.7 5.57-5.28 5.86.42.38.78 1.1.78 2.22v3.29c0 .31.21.68.8.56 4.57-1.56 7.86-5.96 7.86-11.16C23.5 5.78 18.35.5 12 .5z"/></symbol>
+  <symbol id="s-instagram" viewBox="0 0 48 48"><rect x="5" y="5" width="38" height="38" rx="11" fill="url(#gInsta)"/><rect x="12.500" y="12.500" width="23" height="23" rx="7" fill="none" stroke="#fff" stroke-width="2.800"/><circle cx="24" cy="24" r="5.500" fill="none" stroke="#fff" stroke-width="2.800"/><circle cx="31" cy="17" r="1.700" fill="#fff"/></symbol>
+
+  <symbol id="u-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="u-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/></symbol>
+  <symbol id="u-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.500" fill="none" stroke="currentColor" stroke-width="1.800"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/></symbol>
+  <symbol id="u-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2.500" fill="none" stroke="currentColor" stroke-width="1.800"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="1.800"/></symbol>
+  <symbol id="u-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="u-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.800"/><rect x="3" y="13" width="18" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.800"/><path d="M7 7.500h.01M7 16.500h.01" stroke="currentColor" stroke-width="2.600" stroke-linecap="round"/></symbol>
+  <symbol id="u-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="currentColor" stroke-width="1.800"/><path d="M4 6v12c0 1.700 3.600 3 8 3s8-1.300 8-3V6M4 12c0 1.700 3.600 3 8 3s8-1.300 8-3" fill="none" stroke="currentColor" stroke-width="1.800"/></symbol>
+  <symbol id="u-spark" viewBox="0 0 24 24"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linejoin="round"/></symbol>
+  <symbol id="u-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.800"/><circle cx="12" cy="10" r="2.500" fill="none" stroke="currentColor" stroke-width="1.800"/></symbol>
+  <symbol id="u-apps" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="14" y="4" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="4" y="14" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="14" y="14" width="6" height="6" rx="1.5" fill="currentColor"/></symbol>
+  <symbol id="u-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- ============ BACKGROUND + CURSOR ============ -->
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="progress" id="progress"></div>
+
+<!-- ============ NAVBAR (glass) ============ -->
+<header class="nav-wrap">
+  <nav class="nav glass" id="nav">
+    <a href="#home" class="logo" data-cursor="Home">
+      <span class="logo-mark"><img src="assets/ankitx-logo-transparent.png" alt=""></span>
+      <span class="logo-text">Ankit<b>X</b></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-scramble>Home</a></li>
+      <li><a href="#about" data-scramble>About</a></li>
+      <li><a href="#skills" data-scramble>Skills</a></li>
+      <li><a href="#services" data-scramble>Services</a></li>
+      <li><a href="#journey" data-scramble>Journey</a></li>
+      <li><a href="#contact" data-scramble>Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-small btn-primary nav-cta"><span>Hire me</span></a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><i></i><i></i></button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ SOCIAL DOCK ============ -->
+<aside class="dock" aria-label="Social links">
+  <button class="dock-trigger" id="dockTrigger" type="button" aria-label="Open social links" aria-expanded="false" aria-controls="dockLinks" data-cursor="Social links"><svg class="ico"><use href="#u-apps"/></svg></button>
+  <nav class="dock-links" id="dockLinks" aria-label="Social profiles">
+    <a href="https://wa.me/919672244908" target="_blank" rel="noopener" aria-label="WhatsApp" data-cursor="WhatsApp"><svg class="ico"><use href="#s-whatsapp"/></svg></a>
+    <a href="mailto:ankitsharma20033@gmail.com" aria-label="Gmail" data-cursor="Gmail"><svg class="ico"><use href="#s-gmail"/></svg></a>
+    <a href="https://github.com/codewithankit-01" target="_blank" rel="noopener" aria-label="GitHub" data-cursor="GitHub"><svg class="ico"><use href="#s-github"/></svg></a>
+    <a href="https://www.instagram.com/theankitsharma1/" target="_blank" rel="noopener" aria-label="Instagram" data-cursor="Instagram"><svg class="ico"><use href="#s-instagram"/></svg></a>
+  </nav>
+  <span class="dock-line"></span>
+</aside>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow mono reveal"><i class="pulse"></i> Available for new projects</p>
+      <h1 class="hero-title reveal">
+        <span class="line">Hi, I'm</span>
+        <span class="line grad" data-glitch="Ankit Sharma">Ankit Sharma</span>
+      </h1>
+      <p class="hero-role reveal"><span class="mono">&gt;</span> <span id="typed"></span><span class="caret"></span></p>
+      <p class="hero-text reveal">I build fast, clean and futuristic websites. From the pixel on the screen to the database behind it, I take an idea and ship it as a working product.</p>
+      <div class="hero-cta reveal">
+        <a href="#contact" class="btn btn-primary"><span>Start a project</span><svg class="ico"><use href="#u-arrow"/></svg></a>
+        <a href="https://wa.me/919672244908" target="_blank" rel="noopener" class="btn btn-ghost"><svg class="ico"><use href="#s-whatsapp"/></svg><span>WhatsApp me</span></a>
+      </div>
+      <ul class="hero-tags reveal">
+        <li><svg class="ico"><use href="#i-html"/></svg>HTML</li>
+        <li><svg class="ico"><use href="#i-css"/></svg>CSS</li>
+        <li><svg class="ico"><use href="#i-js"/></svg>JavaScript</li>
+        <li><svg class="ico"><use href="#i-python"/></svg>Python</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="photo-card" data-tilt>
+        <div class="photo-glow"></div>
+        <img src="assets/ankit.jpg" alt="Ankit Sharma at his developer desk" width="800" height="905">
+        <div class="photo-chip chip-a mono"><i class="pulse"></i> Code. Build. Deploy. Repeat.</div>
+        <div class="photo-chip chip-b mono">// Developer</div>
+      </div>
+      <div class="float f1"><svg class="ico"><use href="#i-html"/></svg></div>
+      <div class="float f2"><svg class="ico"><use href="#i-js"/></svg></div>
+      <div class="float f3"><svg class="ico"><use href="#i-python"/></svg></div>
+      <div class="float f4"><svg class="ico"><use href="#i-claude"/></svg></div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-hint mono" data-cursor="Scroll"><span></span>scroll</a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>HTML</span><i>&#10022;</i><span>CSS</span><i>&#10022;</i><span>JavaScript</span><i>&#10022;</i><span>Python</span><i>&#10022;</i><span>Django</span><i>&#10022;</i><span>Flask</span><i>&#10022;</i><span>SQLite</span><i>&#10022;</i><span>Claude</span><i>&#10022;</i><span>Cursor AI</span><i>&#10022;</i><span>Antigravity</span><i>&#10022;</i><span>Linux</span><i>&#10022;</i>
+    <span>HTML</span><i>&#10022;</i><span>CSS</span><i>&#10022;</i><span>JavaScript</span><i>&#10022;</i><span>Python</span><i>&#10022;</i><span>Django</span><i>&#10022;</i><span>Flask</span><i>&#10022;</i><span>SQLite</span><i>&#10022;</i><span>Claude</span><i>&#10022;</i><span>Cursor AI</span><i>&#10022;</i><span>Antigravity</span><i>&#10022;</i><span>Linux</span><i>&#10022;</i>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <div class="media-card" data-tilt>
+        <img src="assets/bulb.jpg" alt="Glowing light bulb connected to a network of icons" loading="lazy" width="900" height="600">
+        <div class="media-overlay mono">idea &rarr; code &rarr; product</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat glass"><b data-count="11">0</b><span>Technologies</span></div>
+        <div class="stat glass"><b data-count="3">0</b><span>Layers: UI, Backend, Data</span></div>
+        <div class="stat glass"><b data-count="100" data-suffix="%">0</b><span>Focus on quality</span></div>
+      </div>
+    </div>
+    <div class="about-copy">
+      <p class="kicker mono reveal">// about me</p>
+      <h2 class="h2 reveal">A developer who builds <span class="grad">ideas into reality.</span></h2>
+      <p class="reveal">I'm Ankit Sharma, a web developer. I started with curiosity about how websites work, kept learning, and now build complete products: responsive front ends, Python back ends, and SQL databases.</p>
+      <p class="reveal">I also work with AI tools like Claude, Cursor AI and Antigravity to move faster, and I'm comfortable on Linux. I care about clean code, smooth animation and websites that feel good to use.</p>
+      <ul class="checks reveal">
+        <li>Responsive, pixel-careful front ends</li>
+        <li>Back ends with Django and Flask</li>
+        <li>SQL databases and clean data models</li>
+        <li>AI-assisted workflow for faster delivery</li>
+      </ul>
+      <div class="reveal"><a href="#contact" class="btn btn-ghost"><span>Let's talk</span><svg class="ico"><use href="#u-arrow"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <p class="kicker mono reveal">// skills &amp; tools</p>
+    <h2 class="h2 reveal">My <span class="grad">tech stack</span></h2>
+    <div class="tabs reveal" id="tabs" role="group" aria-label="Filter skills">
+      <button class="tab active" data-filter="all" aria-pressed="true">All</button>
+      <button class="tab" data-filter="front" aria-pressed="false">Frontend</button>
+      <button class="tab" data-filter="back" aria-pressed="false">Backend</button>
+      <button class="tab" data-filter="data" aria-pressed="false">Database</button>
+      <button class="tab" data-filter="tools" aria-pressed="false">AI &amp; Tools</button>
+    </div>
+    <div class="skill-grid" id="skillGrid">
+      <article class="skill" data-cat="front" data-tilt><svg class="ico big"><use href="#i-html"/></svg><h3>HTML</h3><p>Semantic, accessible page structure.</p></article>
+      <article class="skill" data-cat="front" data-tilt><svg class="ico big"><use href="#i-css"/></svg><h3>CSS</h3><p>Layouts, glass effects and animation.</p></article>
+      <article class="skill" data-cat="front" data-tilt><svg class="ico big"><use href="#i-js"/></svg><h3>JavaScript</h3><p>Interactive, dynamic user interfaces.</p></article>
+      <article class="skill" data-cat="back" data-tilt><svg class="ico big"><use href="#i-python"/></svg><h3>Python</h3><p>Clean scripts and web back ends.</p></article>
+      <article class="skill" data-cat="back" data-tilt><svg class="ico big"><use href="#i-django"/></svg><h3>Django</h3><p>Full-stack apps with batteries included.</p></article>
+      <article class="skill" data-cat="back" data-tilt><svg class="ico big"><use href="#i-flask"/></svg><h3>Flask</h3><p>Lightweight APIs and services.</p></article>
+      <article class="skill" data-cat="data" data-tilt><svg class="ico big"><use href="#i-sql"/></svg><h3>SQLite</h3><p>SQL queries, schemas and lightweight databases.</p></article>
+      <article class="skill" data-cat="tools" data-tilt><svg class="ico big"><use href="#i-claude"/></svg><h3>Claude</h3><p>AI pair for building and debugging.</p></article>
+      <article class="skill" data-cat="tools" data-tilt><svg class="ico big"><use href="#i-cursor"/></svg><h3>Cursor AI</h3><p>AI-first code editor workflow.</p></article>
+      <article class="skill" data-cat="tools" data-tilt><svg class="ico big"><use href="#i-antigravity"/></svg><h3>Antigravity</h3><p>Agent-driven development.</p></article>
+      <article class="skill" data-cat="tools" data-tilt><svg class="ico big"><use href="#i-linux"/></svg><h3>Linux</h3><p>Terminal, servers and tooling.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <p class="kicker mono reveal">// what I do</p>
+    <h2 class="h2 reveal">Services for your <span class="grad">next project</span></h2>
+    <div class="service-grid">
+      <article class="service glass reveal" data-tilt>
+        <div class="service-ico"><svg class="ico"><use href="#u-code"/></svg></div>
+        <h3>Website Design &amp; Development</h3>
+        <p>Modern, responsive websites with smooth animation, glass UI and fast loading. Portfolios, business sites and landing pages.</p>
+        <span class="service-link">HTML &middot; CSS &middot; JavaScript</span>
+      </article>
+      <article class="service glass reveal" data-tilt>
+        <div class="service-ico"><svg class="ico"><use href="#u-server"/></svg></div>
+        <h3>Back-end &amp; APIs</h3>
+        <p>Web apps and APIs built with Python (Django, Flask), with forms, login and admin panels where you need them.</p>
+        <span class="service-link">Python &middot; Django &middot; Flask</span>
+      </article>
+      <article class="service glass reveal" data-tilt>
+        <div class="service-ico"><svg class="ico"><use href="#u-db"/></svg></div>
+        <h3>Database Work</h3>
+        <p>Clear SQL schemas, reliable queries and data models that keep your app organised as it grows.</p>
+        <span class="service-link">SQL &middot; SQLite</span>
+      </article>
+      <article class="service glass reveal" data-tilt>
+        <div class="service-ico"><svg class="ico"><use href="#u-spark"/></svg></div>
+        <h3>AI-assisted Development</h3>
+        <p>Using Claude, Cursor AI and Antigravity to prototype quickly, fix bugs faster and deliver on time.</p>
+        <span class="service-link">Claude &middot; Cursor &middot; Antigravity</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="section" id="journey">
+  <div class="wrap journey-grid">
+    <div class="journey-copy">
+      <p class="kicker mono reveal">// my journey</p>
+      <h2 class="h2 reveal">Small steps, <span class="grad">big results.</span></h2>
+      <ol class="steps">
+        <li class="reveal"><b>Curiosity</b><span>It started with one question: how does it work?</span></li>
+        <li class="reveal"><b>Learning</b><span>Building skills across front end, back end and databases.</span></li>
+        <li class="reveal"><b>Real projects</b><span>Turning that knowledge into websites that help clients.</span></li>
+        <li class="reveal"><b>Bigger vision</b><span>Same passion, bigger possibilities.</span></li>
+      </ol>
+    </div>
+    <div class="journey-media reveal">
+      <div class="media-card" data-tilt><img src="assets/roadmap.jpg" alt="Roadmap: Curiosity, Learning, Real Projects, Bigger Vision" loading="lazy" width="1100" height="733"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="kicker mono reveal">// contact</p>
+    <h2 class="h2 reveal">Let's build something <span class="grad">great together.</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-card glass reveal" data-tilt>
+          <div class="info-ico"><svg class="ico"><use href="#u-phone"/></svg></div>
+          <div class="info-text"><span class="mono">Mobile / WhatsApp</span><a href="tel:+919672244908" id="phoneText">+91 96722 44908</a></div>
+          <button class="copy" data-copy="+919672244908" aria-label="Copy phone number"><svg class="ico"><use href="#u-copy"/></svg></button>
+        </div>
+        <div class="info-card glass reveal" data-tilt>
+          <div class="info-ico"><svg class="ico"><use href="#u-mail"/></svg></div>
+          <div class="info-text"><span class="mono">Gmail</span><a href="mailto:ankitsharma20033@gmail.com">ankitsharma20033@gmail.com</a></div>
+          <button class="copy" data-copy="ankitsharma20033@gmail.com" aria-label="Copy email"><svg class="ico"><use href="#u-copy"/></svg></button>
+        </div>
+        <div class="socials reveal">
+          <a href="https://wa.me/919672244908" target="_blank" rel="noopener" class="social wa" aria-label="WhatsApp" data-cursor="WhatsApp"><svg class="ico"><use href="#s-whatsapp"/></svg></a>
+          <a href="mailto:ankitsharma20033@gmail.com" class="social" aria-label="Gmail" data-cursor="Gmail"><svg class="ico"><use href="#s-gmail"/></svg></a>
+          <a href="https://github.com/codewithankit-01" target="_blank" rel="noopener" class="social" aria-label="GitHub" data-cursor="GitHub"><svg class="ico"><use href="#s-github"/></svg></a>
+          <a href="https://www.instagram.com/theankitsharma1/" target="_blank" rel="noopener" class="social" aria-label="Instagram" data-cursor="Instagram"><svg class="ico"><use href="#s-instagram"/></svg></a>
+        </div>
+      </div>
+
+      <form class="form glass reveal" id="contactForm" novalidate>
+        <h3>Send me a message</h3>
+        <div class="field">
+          <input type="text" id="fName" name="name" placeholder=" " required autocomplete="name" aria-describedby="fNameError">
+          <label for="fName">Your name</label><i class="field-line"></i>
+          <small class="err" id="fNameError" data-for="fName" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <input type="email" id="fEmail" name="email" placeholder=" " required autocomplete="email" aria-describedby="fEmailError">
+          <label for="fEmail">Your email</label><i class="field-line"></i>
+          <small class="err" id="fEmailError" data-for="fEmail" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <select id="fType" name="type">
+            <option>Portfolio / Business website</option>
+            <option>Web app (Python)</option>
+            <option>Database work</option>
+            <option>Something else</option>
+          </select>
+          <label for="fType" class="static">Project type</label><i class="field-line"></i>
+        </div>
+        <div class="field">
+          <textarea id="fMsg" name="message" rows="4" placeholder=" " required aria-describedby="fMsgError"></textarea>
+          <label for="fMsg">Tell me about your project</label><i class="field-line"></i>
+          <small class="err" id="fMsgError" data-for="fMsg" aria-live="polite"></small>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" data-via="wa"><svg class="ico"><use href="#s-whatsapp"/></svg><span>Send on WhatsApp</span></button>
+          <button type="submit" class="btn btn-ghost" data-via="mail"><svg class="ico"><use href="#u-mail"/></svg><span>Send by Email</span></button>
+        </div>
+        <p class="form-note mono">Your message opens in WhatsApp or your email app, ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="logo"><span class="logo-mark"><img src="assets/ankitx-logo-transparent.png" alt=""></span><span class="logo-text">Ankit<b>X</b></span></div>
+    <p class="mono">© <span id="year"></span> AnkitX. All rights reserved. Designed &amp; built by Ankit Sharma.</p>
+    <a href="#home" class="to-top" aria-label="Back to top" data-cursor="Top"><svg class="ico"><use href="#u-up"/></svg></a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
